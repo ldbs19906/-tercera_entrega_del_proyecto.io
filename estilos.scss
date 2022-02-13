@@ -1,0 +1,219 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background:url(./img/fondo.png);
+    background-color: map-get($map_colores , background-color-body); 
+    // -webkit-background-size: cover;
+
+    @include propiedadesBackground;
+    
+    /* background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center; */
+
+    background-attachment: fixed;
+} 
+
+
+.container{
+    
+    
+    width: 90%;
+    max-width: 10000px;
+    margin: 1.6em auto;
+    display: grid;
+    gap: 1.6em;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+/*Para marcar los contenedores*/
+
+.header,.sidebar, .footer,.related-post,.div{
+
+    @extend .container;
+    background: map-get($map_colores, $background-container );
+    padding:20px;
+    border: map-get($map_colores , $border-container );
+}
+
+/*Organizar header y footer*/
+
+.container{ 
+
+            .header{
+
+                grid-column: 1/6 ;     
+                background-image: url(./img/edificios_de_gran_altura_durante_el_dia-1920x1080.jpg);
+                background-color:map-get($map_colores , $background-color-header );
+                
+                @include propiedadesBackground;
+                /* background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center; */ 
+                border: map-get($map_colores , $border-header );
+                color:map-get($map_colores , $letra_blanca );
+                font-size: 30px;
+                padding:2rem; 
+                text-align: center;
+            }
+            .footer{
+                grid-column: 1/6 ; /*Para que el header y footer abarquen las 6 columnas*/
+                background: map-get($map_colores , $background-footer );
+                color: map-get($map_colores , $letra_blanca );
+                text-align: center;
+            }
+
+            /*Organizar el contenido*/
+
+
+            .sidebar{
+                grid-column: 2/5;
+                background:rgba(0,0,0,0.4);
+                color:map-get($map_colores , $letra_blanca );
+                display: flex; /*Uso flexbox para centrar los elementos*/
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                border: rgb(86, 65, 105) solid;
+    
+            } 
+
+            p{
+                background-color: rgba(0, 0, 0, 0.479);
+                color:map-get($map_colores , $Letra_blanca );
+                
+            }
+
+            .sidebar img{
+
+                width: 100%;
+                margin-top: 5px;
+
+            }
+}
+
+
+/*footer*/
+.footer__flex{
+        display: flex;
+        justify-content: space-around;
+
+
+        .footer__menu{
+
+            list-style: none;
+            text-align: center;
+
+            a{
+                color:map-get($map_colores , $letra_blanca );
+                text-decoration: none;
+    
+            }
+        }
+
+        
+
+}
+
+/*Fomrmulario*/
+form{
+
+    width: 450px;
+    margin: auto;
+    background: rgba(0,0,0,0.4);
+    padding:10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    grid-column: 2/5;
+}
+
+h2{
+    color:map-get($map_colores , $letra_blanca );
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+input, textarea{
+
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+    
+}
+
+textarea{
+    min-height: 100px;
+    min-width: 200px;
+    max-width: 100%;
+
+}
+
+#boton{
+    background: #31384a;
+    color:map-get($map_colores , $letra_blanca );
+    padding: 20px;
+
+    &boton:hover{
+        cursor:pointer;
+        
+    }
+    
+}
+
+
+
+
+
+/*Para celular*/
+
+@media(max-width:768px ){
+
+    .header{
+        text-align: center;
+    }
+
+    .container{
+        
+        .content{
+
+        grid-column: 1/-1; /*Para que abarque todo el ancho*/
+        }
+
+        .sidebar{
+
+        grid-column: 1/-1; /*Para que abarque desde el inicio hasta el fin*/
+        }
+
+        .sidebar iframe{
+
+        width: 100%;
+        margin-top: 5px;
+    
+        }
+
+        .related-post{
+
+        grid-column: 1/-1; 
+        }
+
+    }    
+    /*Para formulario*/
+
+
+    form{
+        width: 120%;
+    }
+
+}
