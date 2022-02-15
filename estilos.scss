@@ -126,7 +126,7 @@ form{
 
     width: 450px;
     margin: auto;
-    background: rgba(0,0,0,0.4);
+    background:map-get($map_colores , $background-form );
     padding:10px 20px;
     box-sizing: border-box;
     margin-top: 20px;
@@ -161,7 +161,7 @@ textarea{
 }
 
 #boton{
-    background: #31384a;
+    background: map-get($map_colores , $background-boton);
     color:map-get($map_colores , $letra_blanca );
     padding: 20px;
 

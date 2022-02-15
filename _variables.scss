@@ -5,6 +5,8 @@ $map_colores:(
     
     background-container: rgb(94, 13, 13),
     background-footer: rgb(38, 38, 139),
+    background-form: rgba(0,0,0,0.4),
+    background-boton: #31384a,
 
     border-container: 1px solid black, 
     border-header: rgb(86, 65, 105) solid,
@@ -25,12 +27,6 @@ $tam-fuente:(
     fuente-grande:30px 
 );
 
-@mixin propiedadesFlex{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 @mixin propiedadesBackground{
 
